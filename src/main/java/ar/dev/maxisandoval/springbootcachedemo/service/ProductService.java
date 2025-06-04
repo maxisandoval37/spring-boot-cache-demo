@@ -10,7 +10,6 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 public class ProductService {
 
-
     private final ConcurrentHashMap<Long, Product> fakeDb = new ConcurrentHashMap<>();
 
     @Cacheable("products")
