@@ -15,4 +15,19 @@ public class ProductController {
     public Product getProduct(@PathVariable Long id) {
         return productService.getProductById(id);
     }
+
+    @PostMapping
+    public Product createProduct(@RequestBody Product product) {
+        return productService.saveProduct(product);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
+    }
+
+    @DeleteMapping("/clear-cache")
+    public void clearCache() {
+        productService.clearCache();
+    }
 }
