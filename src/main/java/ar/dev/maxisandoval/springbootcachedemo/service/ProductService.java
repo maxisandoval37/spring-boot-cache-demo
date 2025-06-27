@@ -34,6 +34,7 @@ public class ProductService {
     // Elimina toda la caché (todos los productos)
     @CacheEvict(value = "products", allEntries = true)
     public void clearCache() {
+        fakeDb.clear();
         log.info("Cache eliminada");
     }
 
