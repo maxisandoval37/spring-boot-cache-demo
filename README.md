@@ -25,7 +25,18 @@ public class CacheDemoApplication {
 }
 ```
 
-### 3. Anotaciones en los los métodos:
+### 3. Configurar propiedades:
+```properties
+spring.application.name=spring-boot-cache-demo
+
+# guarda como max. 100 entradas
+# la entrada dura 10s en cache, luego se ejecuta de nuevo el método original
+spring.cache.type=caffeine
+spring.cache.caffeine.spec=maximumSize=100,expireAfterWrite=10s
+logging.level.org.springframework.cache=DEBUG
+```
+
+### 4. Anotaciones en los los métodos (service):
  • @Cacheable
  
  • @CachePut
@@ -42,4 +53,4 @@ public class CacheDemoApplication {
 ## Información Adicional
 Para cualquier información adicional o consultas: <maxisandoval98@gmail.com>
 
-**¡Muchas gracias!**
+**¡Muchas gracias!** 🦔
