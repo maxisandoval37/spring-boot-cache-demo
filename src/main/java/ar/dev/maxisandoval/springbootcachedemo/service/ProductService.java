@@ -10,6 +10,9 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 public class ProductService {
 
+    // CACHE -> "products" Lista completa de products
+    // CACHE -> "product" Producto individual por id
+    
     private final ConcurrentHashMap<Long, Product> fakeDb = new ConcurrentHashMap<>();
 
     @Cacheable("products")
